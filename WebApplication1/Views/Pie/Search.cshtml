@@ -1,0 +1,52 @@
+﻿@* code to create the async (ajax) call to the API *@
+
+
+<div class="my-5">
+    <h3 class="mb-4">
+        Enter your search query
+    </h3>
+    <input id="txtPieName" type="text" />
+    <button id="searchButton" class="btn btn-secondary">Search</button>
+</div>
+<table id="tblPies" cellpadding="0" cellspacing="0">
+    <tbody></tbody>
+</table>
+
+@* js magic *@
+<script type="text/javascript">
+
+    // triggers, when document is ready
+    $(document).ready(function () {
+        // click event on button, which executes the code below
+        $("button").click(function () {
+            //get the value of the user input
+            var searchQuery = $.trim($("#txtPieName").val());
+            //remove everything that may already be in the tbody
+            $("tbody").html("");
+            //make ajax call
+            $.ajax({
+                //specifying data for the post
+                type: "POST",
+                url: "/api/Search",
+                data: "\"" + searchQuery + "\"",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                //if 200: return array of pies, loop over it and 
+                success: function (pies) {
+                    $.each(pies, function (i, pie) {
+                        //append to tbody a new row, tds with content
+                        $("tbody").append($("<tr>"));
+                        appendElement = $("tbody tr").last();
+                        appendElement.append($("<td>").html('<img src=' + pie.imageThumbnailUrl + ' width=250 class="rounded m-2">'));
+                        appendElement.append($("<td>").html('<h2><a href="/pie/details/' + pie.pieId + '" class="pie-link">' + pie.name + '</a></h2>'));
+                    });
+                },
+                //else log to console
+                error: function (xhr, status, error) {
+                    console.log(xhr)
+                }
+            });
+        });
+    });
+
+</script>

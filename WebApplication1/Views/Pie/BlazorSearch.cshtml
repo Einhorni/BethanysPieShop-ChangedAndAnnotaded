@@ -1,0 +1,9 @@
+﻿@using BethanysPieShop.App.Pages
+@using BethanysPieShop.App
+
+<div class="my-5">
+    <component type="typeof(App)" render-mode="Server" />
+    @* is needed bc this site is hosting the blazor component *@
+    <script src="_framework/blazor.web.js"></script>
+</div>
+

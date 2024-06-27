@@ -1,0 +1,97 @@
+﻿@* das hier ist ein recreate des MVC checkouts aus dem Views, nur als Razor Page 
+
+
+das @page macht die Seite zu einem Controller *@
+
+@page
+@model BethanysPieShop.Pages.CheckoutPageModel
+
+@* <form asp-action="Checkout" method="post" role="form"> 
+    the form will by default post to the same page - no specified action needed*@
+<form method="post" role="form">
+    <h3 class="my-5">
+        You're just one step away from your delicous pies.'
+    </h3>
+
+    @* to display all server-side-validation errors*@
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="col-6">
+        <div class="row g-2">
+            <div class="col-12">
+                @* der einzige Unterschied ist, dass Order.xxx verwendet wird, da im zugehörigen Modell / der Klasse das Order Property steckt
+                *@
+                @*     
+                Label das auf der Property "FirstName" des Order-Models verweist
+                FirstName wird für die ANzeige überschrieben von [Display(Name = "First name")] in der Order Klasse und dient nur dem Binding an das Property
+                *@
+                <label asp-for="Order.FirstName" class="form-label"></label>
+                @* Bindet den Input von FirstName an das FirstName property des Orders-Objects, das hinter dem Model steckt*@
+                <input asp-for="Order.FirstName" class="form-control" />
+                @* server-side-validation for every specific line *@
+                <span asp-validation-for="Order.FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="col-12">
+                <label asp-for="Order.LastName" class="form-label"></label>
+                <input asp-for="Order.LastName" class="form-control" />
+                <span asp-validation-for="Order.LastName" class="text-danger"></span>
+            </div>
+
+            <div class="col-12">
+                <label asp-for="Order.AddressLine1" class="form-label"></label>
+                <input asp-for="Order.AddressLine1" class="form-control" />
+                <span asp-validation-for="Order.AddressLine1" class="text-danger"></span>
+            </div>
+
+            <div class="col-12">
+                <label asp-for="Order.AddressLine2" class="form-label"></label>
+                <input asp-for="Order.AddressLine2" class="form-control" />
+                <span asp-validation-for="Order.AddressLine2" class="text-danger"></span>
+            </div>
+
+            <div class="col-6">
+                <label asp-for="Order.City" class="form-label"></label>
+                <input asp-for="Order.City" class="form-control" />
+                <span asp-validation-for="Order.City" class="text-danger"></span>
+            </div>
+
+            <div class="col-6">
+                <label asp-for="Order.State" class="form-label"></label>
+                <input asp-for="Order.State" class="form-control" />
+                <span asp-validation-for="Order.State" class="text-danger"></span>
+            </div>
+
+            <div class="col-6">
+                <label asp-for="Order.ZipCode" class="form-label"></label>
+                <input asp-for="Order.ZipCode" class="form-control" />
+                <span asp-validation-for="Order.ZipCode" class="text-danger"></span>
+            </div>
+
+            <div class="col-6">
+                <label asp-for="Order.Country" class="form-label"></label>
+                <input asp-for="Order.Country" class="form-control" />
+                <span asp-validation-for="Order.Country" class="text-danger"></span>
+            </div>
+
+            <div class="col-12">
+                <label asp-for="Order.Email" class="form-label"></label>
+                <input asp-for="Order.Email" class="form-control" />
+                <span asp-validation-for="Order.Email" class="text-danger"></span>
+            </div>
+
+            <div class="col-12">
+                <label asp-for="Order.PhoneNumber" class="form-label"></label>
+                <input asp-for="Order.PhoneNumber" class="form-control" />
+                <span asp-validation-for="Order.PhoneNumber" class="text-danger"></span>
+            </div>
+
+        </div>
+        <div class="mt-2">
+            <div class="col-md-offset-2 col-md-5">
+                @* Da der Sumbit Button im Form ist, triggert er ein post zur Checkout Action im OrderController, die am Anfang festegelegt wurde*@
+                <input type="submit" class="btn btn-secondary" value="Complete order" />
+            </div>
+        </div>
+    </div>
+</form>

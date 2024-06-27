@@ -1,0 +1,13 @@
+@* not need in the new version (including blazor component in the mvc) *@
+@* routes to the correct component and appliees a default layout if the component defines to ither layout itself *@
+
+@* <Router AppAssembly="typeof(Program).Assembly">
+    <Found Context="routeData">
+        <AuthorizeRouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)">
+            <NotAuthorized>
+                <RedirectToLogin />
+            </NotAuthorized>
+        </AuthorizeRouteView>
+        <FocusOnNavigate RouteData="routeData" Selector="h1" />
+    </Found>
+</Router> *@
