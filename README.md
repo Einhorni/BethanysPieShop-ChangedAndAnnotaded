@@ -2,6 +2,7 @@
 
 This project is based on the Pluralsight course "ASP.NET Core Fundamentals from Gill Cleeren: https://app.pluralsight.com/library/courses/asp-dot-net-core-6-fundamentals/table-of-contents
 
+As of now (July 27th 2024) the application should work without any error.
 
 ## What I have learned:
 - Basics of ASP.NET Core with MVC with Razor Page and Blazor functionality on the side
