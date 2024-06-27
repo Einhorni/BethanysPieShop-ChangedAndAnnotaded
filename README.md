@@ -16,6 +16,7 @@ As of now (July 27th 2024) the application should work without any error.
 - Deeper understanding in writing APIs (ASP.NET. Core Web API), use of EF Core
 - Definitely writing tests
 - Using interactivity and ASP.NET Identity
+- Application und usage of Razor and Blazor
 
 ## Additions and changes:
 - (With the help of a senior dev): Changed Blazor SearchPage to be just a component using _Layout and a RazorView. Original: BlazorSearch rendered in a separat Layout / Razor App
