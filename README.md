@@ -4,6 +4,8 @@ This project is based on the Pluralsight course "ASP.NET Core Fundamentals" from
 
 As of now (July 27th 2024) the application should work without any error.
 
+Please note that this is a project in which I primarily took notes for my personal understanding, so commentaries in the project are in english, german or mixed
+
 ## What I have learned:
 - Basics of ASP.NET Core with MVC with Razor Page and Blazor functionality on the side
 - Working with forms and model binding
