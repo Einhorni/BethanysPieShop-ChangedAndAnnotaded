@@ -12,13 +12,15 @@ Please note that this is a project in which I primarily took notes for my person
 - Writing tests
 - Usage of Entity Framework Core for database integration
 - Making a site interactive with Blazor, using ASP.NET Identity
+- Structure of an application with different Folders, program.cs, appsettings.json
+- Dependency injection (using a DI container)
 
 ## Where I do need more practice
 - Practically all topics need to be tested out in an own project
 - Deeper understanding in writing APIs (ASP.NET. Core Web API), use of EF Core
 - Definitely writing tests
 - Using interactivity and ASP.NET Identity
-- Application und usage of Razor and Blazor
+- Application and usage of Razor and Blazor
 
 ## Additions and changes:
 - (With the help of a senior dev): Changed Blazor SearchPage to be just a component using _Layout and a RazorView. Original: BlazorSearch rendered in a separat Layout / Razor App
